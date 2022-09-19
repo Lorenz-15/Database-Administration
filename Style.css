@@ -223,16 +223,11 @@ footer img {
   }
   .item-sec {
     width: 100%;
+    display: inline-block;
   }
-  .item-sec .bike-brands {
-    text-align: center;
-  }
-  .frame-container {
-    width: 100%;
-    overflow: hidden;
-  }
+
   iframe {
-    margin-right: 20px;
+    width: 100%;
   }
   footer .brand-logo {
     display: flex;
