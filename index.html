@@ -7,126 +7,44 @@
     <title>E-Commerce Site</title>
     <link rel="stylesheet" href="Style.css" />
   </head>
-  <body>
+  <body background="Images/rb-bg.jpg">
     <header><span>Mountain Bikes</span></header>
     <div class="container">
       <section class="cat-sec">
+        <img class="logo" src="Images/TeamCambros.png" alt="" />
         <h4>Categories</h4>
         <div class="cat">
-          <a class="active" href="/index.html">Mountain Bike</a>
-          <a href="/Rb.html">Road Bike</a>
-          <a href="/components.html">Bike Components</a>
+          <a class="active" href="mtb-items.html" target="items-frame"
+            >Mountain Bike</a
+          >
+          <a href="rb-items.html" target="items-frame">Road Bike</a>
+          <a href="components-items.html" target="items-frame"
+            >Bike Components</a
+          >
         </div>
       </section>
-
-      <section class="item-sec">
-        <table>
-          <tr>
-            <th class="bike-brands" colspan="4">Trek</th>
-          </tr>
-          <tr>
-            <td>
-              <a href=""
-                ><img
-                  src="Images/mtb/trek1-removebg-preview.png"
-                  alt="Trinx mtb" />
-                <p>Php 490,000</p></a
-              >
-            </td>
-            <td>
-              <a href=""
-                ><img
-                  src="Images/mtb/trek2-removebg-preview.png"
-                  alt="Trinx mtb" />
-                <p>Php 110,000</p></a
-              >
-            </td>
-            <td>
-              <a href=""
-                ><img
-                  src="Images/mtb/trek3-removebg-preview.png"
-                  alt="Trinx mtb" />
-                <p>Php 95,990</p></a
-              >
-            </td>
-            <td>
-              <a href=""
-                ><img
-                  src="Images/mtb/trek4-removebg-preview.png"
-                  alt="Trinx mtb" />
-                <p>Php 250,000</p></a
-              >
-            </td>
-          </tr>
-          <tr>
-            <th class="bike-brands" colspan="4">Santa Cruz</th>
-          </tr>
-          <tr>
-            <td>
-              <a href=""
-                ><img src="Images/mtb/sc1.avif" alt="Trinx mtb" />
-                <p>Santa Cruz</p></a
-              >
-            </td>
-            <td>
-              <a href=""
-                ><img src="Images/mtb/sc2.avif" alt="Trinx mtb" />
-                <p>Santa Cruz</p></a
-              >
-            </td>
-            <td>
-              <a href=""
-                ><img src="Images/mtb/sc3.avif" alt="Trinx mtb" />
-                <p>Santa Cruz</p></a
-              >
-            </td>
-            <td>
-              <a href=""
-                ><img src="Images/mtb/sc4.avif" alt="Trinx mtb" />
-                <p>Santa Cruz</p></a
-              >
-            </td>
-          </tr>
-          <tr>
-            <th class="bike-brands" colspan="4">KTM</th>
-          </tr>
-          <tr>
-            <td>
-              <a href=""
-                ><img
-                  src="Images/mtb/kt1-removebg-preview.png"
-                  alt="Trinx mtb" />
-                <p>KTM Chicago Disc 271</p></a
-              >
-            </td>
-            <td>
-              <a href=""
-                ><img
-                  src="Images/mtb/kt2-removebg-preview.png"
-                  alt="Trinx mtb" />
-                <p>KTM Ultra Ride 29</p></a
-              >
-            </td>
-            <td>
-              <a href=""
-                ><img
-                  src="Images/mtb/kt3-removebg-preview.png"
-                  alt="Trinx mtb" />
-                <p>2020 KTM Ultra Sport</p></a
-              >
-            </td>
-            <td>
-              <a href=""
-                ><img
-                  src="Images/mtb/kt4-removebg-preview.png"
-                  alt="Trinx mtb" />
-                <p>KTM Scarp MT Master</p></a
-              >
-            </td>
-          </tr>
-        </table>
-      </section>
+      <div class="frame-container">
+        <iframe
+          scrolling="auto"
+          src="mtb-items.html"
+          frameborder="0"
+          width="100%"
+          height="600"
+          name="items-frame"></iframe>
+      </div>
     </div>
-    <footer>Sponsors and informations</footer>
+    <footer>
+      <div class="brand-logo">
+        <img src="/Images/Bike brands/586100be4fc7f3474eb80dce.png" alt="" />
+        <img src="/Images/Bike brands/download-removebg-preview.png" alt="" />
+        <img
+          src="/Images/Bike brands/giant_bicycles_logo_before_after.png"
+          alt="" />
+        <img src="/Images/Bike brands/shimano_logo.jpg" alt="" />
+        <img src="/Images/Bike brands/trek-logo.png" alt="" />
+        <img src="/Images/brand-logo.png" alt="" />
+      </div>
+      <p>Copyrights - All rights reserved 2022</p>
+    </footer>
   </body>
 </html>

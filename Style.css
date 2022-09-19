@@ -6,7 +6,6 @@
 body {
   width: 100%;
   height: 100%;
-  background-image: url(/Images/bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -33,6 +32,15 @@ header span {
   margin: 10px;
   left: 10%;
 }
+.frame-container {
+  width: 100%;
+  overflow: hidden;
+}
+iframe {
+  position: relative;
+  width: 100%;
+  right: -20px;
+}
 .container {
   position: relative;
   width: 100%;
@@ -41,27 +49,31 @@ header span {
   flex-direction: row;
   backdrop-filter: blur(5px);
 }
-.container h4 {
-  font-family: monospace;
-  margin-top: 20px;
-  letter-spacing: 2px;
-}
-.container .cat-sec {
+.cat-sec {
   position: relative;
   font-size: 30px;
   text-align: center;
   color: #fff;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.39);
   width: 50vh;
   height: auto;
 }
-.container .cat {
+.cat-sec h4 {
+  font-family: monospace;
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
+.cat-sec .logo {
+  width: 41vh;
+  background-color: #000;
+}
+.cat-sec .cat {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.container .cat a {
+.cat-sec .cat a {
   font-size: 20px;
   color: #fff;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -72,24 +84,23 @@ header span {
   transition: 0.2s all ease-in-out;
   letter-spacing: 2px;
 }
-.container .cat a:hover,
-.container .cat .active {
+.cat-sec .cat a:hover,
+.cat-sec .cat .active {
   background-color: yellow;
   color: #000;
 }
-.container .item-sec {
+.item-sec {
   position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
-  border: 2px solid #000;
   overflow: auto;
 }
-.container table {
+.item-sec table {
   text-align: center;
-  margin-top: 10px;
+  margin: 10px 30px 0 0;
 }
-.container th {
+.item-sec th {
   padding: 50px;
   font-size: 40px;
   text-transform: uppercase;
@@ -98,17 +109,18 @@ header span {
     "Lucida Sans", Arial, sans-serif;
   color: #fff;
 }
-.container .bike-brands {
+.item-sec .bike-brands {
   border-bottom: 2px solid yellow;
-  border-top: 2px solid rgb(255, 255, 255);
-  color: yellow;
+  border-top: 2px solid #000;
+  background-color: rgba(121, 118, 118, 0.473);
+  color: rgb(255, 251, 0);
   padding: 5px;
   font-size: 35px;
   letter-spacing: 3px;
   font-style: italic;
   font-weight: bold;
 }
-.container td {
+.item-sec td {
   position: relative;
   padding: 80px 40px 80px 40px;
   font-size: 20px;
@@ -116,41 +128,118 @@ header span {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   letter-spacing: 1px;
 }
-.container a {
+.item-sec a {
   text-decoration: none;
   font-weight: bold;
   font-size: 10px;
 }
-.container p {
+.item-sec a p {
   font-size: 12px;
   position: relative;
-  margin-top: 10px;
   color: rgb(255, 255, 255);
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.644);
   width: auto;
   border-radius: 5px;
   padding: 5px;
-  border: 1px solid yellow;
-  z-index: -1;
+  border-bottom: 2px solid yellow;
+  border-top: 2px solid #000;
 }
-.container img {
+.item-sec img {
   width: 170px;
   height: 130px;
   border-radius: 5px;
   padding: 3px;
-  background-color: rgba(114, 114, 114, 0.336);
-  transition: transform 0.3s ease-in-out;
-  box-shadow: 0px 0px 3px 2px rgba(114, 114, 114, 0.336);
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
 }
-.container img:hover {
+.item-sec img:hover {
   transform: scale(1.8);
   z-index: 1;
+  box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.219);
+  background-color: rgba(0, 0, 0, 0.219);
 }
-.container a:hover p {
+.item-sec a:hover p {
   display: none;
 }
 footer {
-  height: 200px;
-  background-color: rgb(78, 74, 74);
+  height: 220px;
+  background-color: rgba(194, 194, 194, 0.096);
   box-shadow: #fff;
+  position: relative;
+}
+footer .brand-logo {
+  width: 100%;
+  height: 200px;
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+footer p {
+  text-align: center;
+  font-family: monospace;
+  color: #fff;
+}
+footer img {
+  width: 20vh;
+  margin: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+  .cat-sec {
+    width: 100%;
+    font-size: 20px;
+  }
+  .cat-sec .logo,
+  h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  header span {
+    letter-spacing: 10px;
+    font-size: 25px;
+    transform: skew(-20deg);
+    transform: translateX(-10%);
+    -webkit-transform: translateX(-10%);
+    -moz-transform: translateX(-10%);
+    -ms-transform: translateX(-10%);
+    -o-transform: translateX(-10%);
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    width: 100%;
+  }
+  .cat-sec .cat {
+    display: flex;
+    text-align: center;
+  }
+  .item-sec {
+    width: 100%;
+  }
+  .item-sec .bike-brands {
+    text-align: center;
+  }
+  .frame-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  iframe {
+    margin-right: 20px;
+  }
+  footer .brand-logo {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  footer img {
+    width: 10vh;
+    margin: 10px;
+  }
 }
