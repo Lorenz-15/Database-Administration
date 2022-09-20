@@ -189,6 +189,56 @@ footer img {
   margin: 10px;
 }
 
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  transform: translate(20%, 30%);
+  width: 70%;
+  height: 70%;
+  transition: 3s;
+  overflow: auto;
+  background-color: rgba(78, 78, 78, 0.712);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+.modal span {
+  padding: 5px;
+  margin-right: 3px;
+}
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 800px) {
   .cat-sec {
     width: 100%;
