@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url("http://fonts.cdnfonts.com/css/khand");
 * {
   margin: 0;
   padding: 0;
@@ -6,13 +8,16 @@
 body {
   width: 100%;
   height: 100%;
+  font-family: "Poppins", sans-serif;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  backdrop-filter: blur(5px);
+  overflow-x: hidden;
 }
 header {
   position: relative;
-  height: 80px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,16 +35,16 @@ header span {
   height: auto;
   padding: 5px;
   margin: 10px;
-  left: 10%;
 }
 .frame-container {
   width: 100%;
-  overflow: hidden;
+  height: 100%;
+  top: 10px;
 }
 iframe {
   position: relative;
-  width: 100%;
-  right: -20px;
+  width: 1390px;
+  display: flex;
 }
 .container {
   position: relative;
@@ -50,53 +55,55 @@ iframe {
   backdrop-filter: blur(5px);
 }
 .cat-sec {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(97, 97, 97);
+  font-family: "khand", sans-serif;
+}
+.cat a img {
   position: relative;
-  font-size: 30px;
-  text-align: center;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.39);
-  width: 50vh;
-  height: auto;
+  width: 200px;
+  height: 50px;
+  float: left;
 }
-.cat-sec h4 {
-  font-family: monospace;
-  margin-top: 20px;
-  letter-spacing: 2px;
-}
-.cat-sec .logo {
-  width: 41vh;
-  background-color: #000;
+.cat a:nth-child(1):hover {
+  background-color: rgb(59, 59, 59);
 }
 .cat-sec .cat {
-  margin-top: 20px;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
 }
-.cat-sec .cat a {
-  font-size: 20px;
+.cat a {
+  width: 100%;
+  background-color: rgb(59, 59, 59);
   color: #fff;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 15px;
   text-decoration: none;
-  margin: 10px 0 10px;
-  padding: 5px;
-  transition: 0.2s all ease-in-out;
+  text-align: center;
+  transition: all 300ms;
   letter-spacing: 2px;
+  font-style: italic;
+  font-size: 17px;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
 }
-.cat-sec .cat a:hover,
-.cat-sec .cat .active {
-  background-color: yellow;
-  color: #000;
+.cat a:hover {
+  background-color: #000;
 }
 .item-sec {
   position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
-  overflow: auto;
 }
 .item-sec table {
+  width: 80%;
   text-align: center;
   margin: 10px 30px 0 0;
 }
@@ -105,8 +112,6 @@ iframe {
   font-size: 40px;
   text-transform: uppercase;
   letter-spacing: 5px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
   color: #fff;
 }
 .item-sec .bike-brands {
@@ -114,8 +119,8 @@ iframe {
   border-top: 2px solid #000;
   background-color: rgba(121, 118, 118, 0.473);
   color: rgb(255, 251, 0);
-  padding: 5px;
-  font-size: 35px;
+  padding: 2px;
+  font-size: 30px;
   letter-spacing: 3px;
   font-style: italic;
   font-weight: bold;
@@ -148,32 +153,52 @@ iframe {
   width: 170px;
   height: 130px;
   border-radius: 5px;
-  padding: 3px;
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
+  padding: 4px;
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -ms-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
 }
-.item-sec img:hover {
-  transform: scale(1.8);
+
+.item-sec span {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.9rem;
+  color: #fff;
+  background-clip: text;
+  z-index: 2;
+  border: 2px solid rgb(119, 119, 119);
+  padding: 5px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+}
+.item-sec a:hover img {
+  transform: scale(1.5);
   z-index: 1;
-  box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.219);
-  background-color: rgba(0, 0, 0, 0.219);
+  box-shadow: 1px 1px 5px 4px rgb(167, 167, 33) inset;
+  background-color: rgba(0, 0, 0, 0.534);
+  filter: blur(5px);
 }
 .item-sec a:hover p {
   display: none;
 }
+.item-sec a:hover span {
+  display: block;
+}
 footer {
-  height: 220px;
+  height: 230px;
   background-color: rgba(194, 194, 194, 0.096);
   box-shadow: #fff;
   position: relative;
+  backdrop-filter: blur(5px);
 }
 footer .brand-logo {
   width: 100%;
   height: 200px;
-  backdrop-filter: blur(5px);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -188,74 +213,6 @@ footer img {
   width: 20vh;
   margin: 10px;
 }
-
-/* The Modal (background) */
-.modal {
-  display: block;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  transform:translate(20%, 30%);
-  width: 70%;
-  height: 70%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.856);
-  backdrop-filter: blur(20px);
-  border-radius: 7px;
-  border: 1px solid yellow;
-  box-shadow: 1px 1px 10px 1px yellow;
-
-}
-
-/* Modal Content */
-.modal-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  transform: translate(10%, 20%);
-  margin-top: 30px;
-  padding: 10px;
-  width: 80%;
-  -webkit-transform: translate(10%, 20%);
-  -moz-transform: translate(10%, 20%);
-  -ms-transform: translate(10%, 20%);
-  -o-transform: translate(10%, 20%);
-}
-.modal .item-img img{
-  background-color: rgb(97, 97, 97);
-  width: 50vh;
-  padding: 10px;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-}
-.modal .item-details{
-  color: #fff;
-  width: 50%;
-  margin-left: 40px;
-}
-.modal .item-details ul{
-  list-style-type: none;
-}
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-.close:hover,
-.close:focus {
-  color: rgb(238, 255, 0);
-  text-decoration: none;
-  cursor: pointer;
-}
-
 
 @media only screen and (max-width: 800px) {
   .cat-sec {
