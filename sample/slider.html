@@ -1,78 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- CSS only -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous" />
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"></script>
 
-    <title>Document</title>
-  </head>
-  <body background="Images/mtb-bg.jpg">
-    <div
-      id="carouselExampleControls"
-      class="carousel slide w-75"
-      data-interval="false">
-      <div class="carousel-inner">
-        <div class="carousel-item active w-100">
-          <img
-            width="600px"
-            height="200px"
-            class="rounded mx-auto d-block w-50"
-            src="Images/Bike-brands/giant_bicycles_logo_before_after.png"
-            alt="First slide" />
-        </div>
-        <div class="carousel-item">
-          <img
-            width="600px"
-            height="200px"
-            class="rounded mx-auto d-block w-50"
-            src="Images/RB/mosso739-removebg-preview.png"
-            alt="Second slide" />
-        </div>
-        <div class="carousel-item">
-          <img
-            width="600px"
-            height="200px"
-            class="rounded mx-auto d-block w-50"
-            src="Images/Components/105-components-st-r7170.png"
-            alt="Third slide" />
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* set the properties of body */
+    body {
+      background-color: #000;
+      /* absoulute para ma occupy nya yung unallocated space sa body.
+         pag relative kasi half lang ng screen kinukuha nya. tapos set sa 100% yung widt & heihgt para buong screen
+      */
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      /* display flex para ma align yung content ni slider
+        align items para ma center vertical and justify para sa horizontal align
+      */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* set the width ng slider na conatiner */
+    /* overflow: hidden not necessary pero incase na mag overflow yung slides
+      sa loob ng container di sya mag ooverlap sa labas ng container */
+    .slider {
+      width: 300px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Display flex ulit para mag stack yung mga slides.
+      pag sinubukan mo syang alisin you'll see na magiging block sya.
+      Overfloww ulit para di mag overlap yung mga slides.
+      scroll snap type. si scroll bar kasi pag inislide mo sya mag sstop sya sa point kung saan
+      ka huminto. for example img1 and img2. pag scroll mo then nag stop ka sa middle. makikita mo yung half ni img 1 and 2.
+      para makita mo yung effect ni x mandatory. set mo si overflow sa auto and si scroll snap sa none.
+      and last scroll behaviour para sa smooth transition naman ng scroll.
+    */
+    .slides {
+      display: flex;
+      overflow-x: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+
+    }
+
+    /*
+    slides>div  dito yung purpose ni ">" naman iseselect nya yung lahat ng div within that parent element which is the
+    slides class.
+    scroll-snap-align naman almost the same sa snap type pero you can see the difference here sa link para sa demo
+    https://css-tricks.com/almanac/properties/s/scroll-snap-align/
+    flex shrink 0 para shrink and di ma display yung ibang slides
+    transform scale 1 naman, is yung size ng slide. scale 1 will fit the content inside the slide
+
+    */
+    .slides>div {
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      width: 300px;
+      height: 300px;
+      border-radius: 10px;
+      background: #eee;
+      transform: scale(1);
+      transition: transform 0.5s;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 100px;
+    }
+
+    /*
+    this will just simply define the width of the image
+    */
+    .slides img {
+      width: 100%;
+    }
+
+    /*
+    slider>a will select all the child anchor element from the parent element slider.
+    inline-flex naman para naka align yung selector horizontal,
+    */
+    .slider>a {
+      display: inline-flex;
+      width: 50px;
+      height: 5px;
+      background: rgb(133, 133, 133);
+      text-decoration: none;
+      align-items: center;
+      justify-content: center;
+      margin: 0 0 0.5rem 0;
+      position: relative;
+      color: #000;
+    }
+
+    a:hover {
+      background-color: beige;
+    }
+
+    /* this apply only when you clicked the selector above the slider */
+    .slider>a:focus {
+      background: rgb(138, 138, 44);
+    }
+  </style>
+
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class=" slider">
+
+
+    <!-- ito pinaka important para mag work sya
+    yung href nito naka reference dun sa id na slide-1, slide-2... slide-5
+    pata ma next sya pag click mo
+    -->
+    <a href="#slide-1"></a>
+    <a href="#slide-2"></a>
+    <a href="#slide-3"></a>
+    <a href="#slide-4"></a>
+    <a href="#slide-5"></a>
+
+    <div class="slides">
+      <div id="slide-1">
+        <img src="/Images/mtb/MY21-ANTHEM_AP_291_Color-A-Black_Carbon-removebg-preview.png" alt="">
       </div>
-      <a
-        class="carousel-control-prev"
-        href="#carouselExampleControls"
-        role="button"
-        data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a
-        class="carousel-control-next"
-        href="#carouselExampleControls"
-        role="button"
-        data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+      <div id="slide-2">
+        2
+      </div>
+      <div id="slide-3">
+        3
+      </div>
+      <div id="slide-4">
+        4
+      </div>
+      <div id="slide-5">
+        5
+      </div>
     </div>
-    <div class="item-details"></div>
-  </body>
+  </div>
+</body>
+
 </html>
