@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 @import url("http://fonts.cdnfonts.com/css/khand");
+
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +16,8 @@ body {
   backdrop-filter: blur(5px);
   overflow-x: hidden;
 }
+
+/* header */
 header {
   position: relative;
   height: 60px;
@@ -23,7 +26,6 @@ header {
   align-items: center;
   background-color: yellow;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 40px;
   line-height: 80px;
   overflow: hidden;
 }
@@ -31,11 +33,14 @@ header span {
   letter-spacing: 10px;
   position: relative;
   transform: skew(-20deg);
+  font-size: 40px;
   width: auto;
   height: auto;
   padding: 5px;
   margin: 10px;
 }
+
+/* frame container */
 .frame-container {
   width: 100%;
   height: 100%;
@@ -46,29 +51,14 @@ iframe {
   width: 1390px;
   display: flex;
 }
-.container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  backdrop-filter: blur(5px);
-}
+
+/* category navigation bar properties */
 .cat-sec {
   display: flex;
   width: 100%;
   height: 50px;
   background-color: rgb(97, 97, 97);
   font-family: "khand", sans-serif;
-}
-.cat a img {
-  position: relative;
-  width: 200px;
-  height: 50px;
-  float: left;
-}
-.cat a:nth-child(1):hover {
-  background-color: rgb(59, 59, 59);
 }
 .cat-sec .cat {
   width: 100%;
@@ -77,6 +67,17 @@ iframe {
   align-items: center;
   overflow: hidden;
 }
+/* page logo of navigation bar*/
+.cat a img {
+  position: relative;
+  max-width: 200px;
+  height: 50px;
+  float: left;
+}
+.cat a:nth-child(1):hover {
+  background-color: rgb(59, 59, 59);
+}
+
 .cat a {
   width: 100%;
   background-color: rgb(59, 59, 59);
@@ -96,6 +97,8 @@ iframe {
 .cat a:hover {
   background-color: #000;
 }
+
+/* items link in frame properties*/
 .item-sec {
   position: relative;
   width: 100%;
@@ -191,6 +194,8 @@ iframe {
 .item-sec a:hover span {
   display: block;
 }
+
+/* footer */
 footer {
   height: 230px;
   background-color: rgba(194, 194, 194, 0.096);
@@ -203,6 +208,7 @@ footer .brand-logo {
   height: 200px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
@@ -212,49 +218,45 @@ footer p {
   color: #fff;
 }
 footer img {
-  width: 20vh;
+  max-width: 20vh;
+  min-width: 10vh;
   margin: 10px;
 }
 
 @media only screen and (max-width: 800px) {
-  .cat-sec {
-    width: 100%;
+  header span {
     font-size: 20px;
   }
-  .cat-sec .logo,
-  h4 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .cat-sec {
     width: 100%;
-  }
-  header span {
-    letter-spacing: 10px;
-    font-size: 25px;
-    transform: skew(-20deg);
-    transform: translateX(-10%);
-    -webkit-transform: translateX(-10%);
-    -moz-transform: translateX(-10%);
-    -ms-transform: translateX(-10%);
-    -o-transform: translateX(-10%);
-  }
-  .container {
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    width: 100%;
+    height: auto;
+    font-size: 20px;
+    margin-bottom: 20px;
   }
   .cat-sec .cat {
     display: flex;
+    flex-direction: column;
     text-align: center;
+    width: 100%;
+    height: fit-content;
+  }
+  .cat-sec a:nth-child(1) {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cat a {
+    width: 100%;
+    letter-spacing: 3px;
+    border: 1px solid #000;
+  }
+  .frame-container {
+    overflow: auto;
   }
   .item-sec {
     width: 100%;
     display: inline-block;
-  }
-
-  iframe {
-    width: 100%;
   }
   footer .brand-logo {
     display: flex;
