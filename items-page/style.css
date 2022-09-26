@@ -75,14 +75,18 @@ td:nth-child(1) {
   padding: 5px;
   margin-top: 10px;
   border-radius: 2px;
+  transition: background 0.3s;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   -ms-border-radius: 2px;
   -o-border-radius: 2px;
+  -webkit-transition: background 0.3s;
+  -moz-transition: background 0.3s;
+  -ms-transition: background 0.3s;
+  -o-transition: background 0.3s;
 }
 .buy-now:hover {
   background-color: yellow;
   color: #000;
   font-weight: bold;
-  letter-spacing: 4px;
 }

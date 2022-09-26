@@ -194,7 +194,32 @@ iframe {
 .item-sec a:hover span {
   display: block;
 }
+/* .buy-form {
+  width: 70%;
+  height: 80vh;
+  margin: auto;
+  margin-top: 5rem;
+  padding: 5rem;
+  background-color: rgba(53, 53, 52, 0.644);
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
 
+.buy-form input[type="text"],
+label {
+  margin: 10px 0 10px 35px;
+  width: 90%;
+  height: 30px;
+  border-radius: 3px;
+  border: none;
+  -webkit-border-radius: ;
+  -moz-border-radius: ;
+  -ms-border-radius: ;
+  -o-border-radius: ;
+} */
 /* footer */
 footer {
   height: 230px;
